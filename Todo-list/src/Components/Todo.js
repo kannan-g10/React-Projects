@@ -5,9 +5,8 @@ import { FaTrashAlt } from "react-icons/fa";
 const Todo = () => {
   const [todo, setTodo] = useState([]);
   const [input, setInput] = useState("");
-  let count = 0;
 
-  const generateId = () => count + 1;
+  const generateId = () => Math.random() * 100;
 
   const handleSubmit = () => {
     setTodo(
