@@ -3,3 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.error {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 15rem;
+    align-items: center;
+}

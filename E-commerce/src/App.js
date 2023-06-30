@@ -6,9 +6,11 @@ import Navigation from "./Navigation/Nav";
 import Products from "./Products/Products";
 import Recommend from "./Recommend/Recommend";
 import Sidebar from "./Sidebars/Sidebar";
-
 import products from "./Components/Constants";
 import Card from "./Components/Card";
+import Error from "./Components/Error";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Cart from "./Components/Cart";
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -51,7 +53,7 @@ const App = () => {
     }
 
     return filteredProducts.map(
-      ({ img, title, star, reviews, prevPrice, newPrice }) => (
+      ({ id, img, title, star, reviews, prevPrice, newPrice }) => (
         <Card
           key={Math.random()}
           img={img}
@@ -77,5 +79,17 @@ const App = () => {
   );
 };
 
+const AppRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
+  },
+]);
+
 const r = ReactDOM.createRoot(document.getElementById("root"));
-r.render(<App />);
+r.render(<RouterProvider router={AppRouter} />);

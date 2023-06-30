@@ -14,5 +14,14 @@ li {
     list-style:none
 }
 
+button {
+    background-color: rgb(18, 217, 18);
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    padding: 4px 8px 4px 8px;
+    cursor: pointer;
+
+}
 
 
